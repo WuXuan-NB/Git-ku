@@ -6,6 +6,9 @@ import Home from '../views/home/index.vue'
 import Timeline from '../views/home/timeline'
 import My from '../views/home/my'
 
+import Login from '../views/login/login.vue'
+
+import Register from '../views/register/register.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,11 +19,11 @@ const routes = [
   },
   {
     path: '/login', // 登陆页面
-    component: null
+    component: Login
   },
   {
     path: '/register',  // 注册页面
-    component: null
+    component: Register
   },
   {
     path: '/favor', // 收藏页面
@@ -55,14 +58,6 @@ const routes = [
       path: '/comment/send',  //发出的评论
       component: null
     }]
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
 
