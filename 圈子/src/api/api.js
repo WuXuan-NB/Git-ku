@@ -7,3 +7,4 @@ export let register =params=>{
 export let login =params=>{
     return axios.post("/api/user/login",params)
 }
+
