@@ -1,65 +1,42 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/home/index.vue'
-
-import Timeline from '../views/home/timeline'
-import My from '../views/home/my'
-
-import Login from '../views/login/login.vue'
-
-import Register from '../views/register/register.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',  // 首页重定向到圈子
-    name: 'home',
-    redirect: '/home/timeline'
+    path:"/main",
+    component:()=>import('../views/main.vue'),
+    children:[
+      {
+        path:"/main/home",
+        component:()=>import('../views/main/home.vue')
+      },
+      {
+        path:"/main/my",
+        component:()=>import('../views/main/my.vue')
+      },
+      {
+        path:"/main",
+        redirect:'/main/home'
+      }
+    ]
   },
   {
-    path: '/login', // 登陆页面
-    component: Login
+    path:"/login",
+    component:()=>import('../views/login.vue')
   },
   {
-    path: '/register',  // 注册页面
-    component: Register
+    path:"/zhuce",
+    component:()=>import('../views/zhuce.vue')
   },
   {
-    path: '/favor', // 收藏页面
-    component: null
-  },
-  {
-    path: '/modify',  // 更改密码
-    component: null
-  },
-  {
-    path: '/info',  // 个人信息
-    component: null
-  },
-  {
-    path: '/home',  // 首页
-    component: Home,
-    children: [{
-      path: '/home/timeline', // 圈子
-      component: Timeline
-    },{
-      path: '/home/my', // 我的
-      component: My
-    }]
-  },
-  {
-    path: '/comment', // 评论
-    component: null,
-    children: [{
-      path: '/comment/receive', // 收到的评论
-      component: null
-    },{
-      path: '/comment/send',  //发出的评论
-      component: null
-    }]
+    path:"/",
+    redirect:'/main'
   }
 ]
+
+
 
 const router = new VueRouter({
   mode: 'history',
@@ -67,4 +44,26 @@ const router = new VueRouter({
   routes
 })
 
+// const whiteList = ['/login', '/register']
+// router.beforeEach((to, from, next)=>{
+//   // Nprogress.start();
+//   let isLogin = window.sessionStorage.getItem('isLogin');
+
+//   if (!isLogin){
+//     if (whiteList.indexOf(to.path) === -1){
+//       // Nprogress.done();
+//       next('/login');
+//     }else{
+//       next();
+//     }
+//   }else{
+//     next();
+//   }
+// })
+
+// router.afterEach((to, from)=>{
+//   Nprogress.done();
+// })
 export default router
+
+
