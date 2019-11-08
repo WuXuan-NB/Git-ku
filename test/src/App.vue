@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-    <div class="App">
-        <router-view></router-view>
+    <div class="app">
+      <router-view/>
     </div>
 </template>
 
@@ -16,10 +16,8 @@ export default {
 
 </script>
 <style lang='scss' scoped>
-   .App{
-     width: 100%;
-     height: 100%;
-     
-   }
-   
+  .app{
+    width: 100%;
+    height: 100%;
+  }
 </style>

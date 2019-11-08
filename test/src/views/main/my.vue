@@ -1,7 +1,6 @@
-<!--  -->
 <template>
     <div>
-        my
+         main/my
     </div>
 </template>
 
