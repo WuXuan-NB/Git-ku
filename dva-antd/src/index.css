@@ -1,0 +1,8 @@
+html, body, :global(#root) {
+  height: 100%;
+}
+
+:global(.header.ant-layout-header){
+  background: rgb(115, 195, 49);
+  color: #fff;
+}
