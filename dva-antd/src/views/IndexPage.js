@@ -30,15 +30,8 @@ class IndexPage extends React.Component{
               <Breadcrumb.Item>List</Breadcrumb.Item>
               <Breadcrumb.Item>App</Breadcrumb.Item>
             </Breadcrumb>
-            <Content className={styles.content}
-              style={{
-                background: '#fff',
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-              }}
-            >
-              <p className='sider content'>Content</p>
+            <Content className={styles.content}>
+              {/* <p className='sider content'>Content</p> */}
 
               <RouterView routes={this.props.routes}/>
             </Content>

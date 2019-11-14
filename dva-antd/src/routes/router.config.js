@@ -1,6 +1,10 @@
 // 加载一级路由
 import IndexPage from '@/views/IndexPage'
 
+// 加载二级路由
+import GovList from '@/views/main/gov/index'
+import NewGov from '@/views/main/gov/new'
+
 
 export default {
   routes: [{
@@ -8,6 +12,10 @@ export default {
     path: '/main',
     children: [
       // 机构路由
+    {
+      path: '/main/govList',
+      component: GovList,
+    },
     {
       path: '/main/addGov',
       component: ()=><p>新增机构页面</p>,
@@ -48,6 +56,10 @@ export default {
     title: '机构管理',
     icon: '',
     children: [{
+      title: '机构列表',
+      path: '/main/govList',
+      show: true
+    },{
       title: '新增机构',
       path: '/main/addGov',
       show: true

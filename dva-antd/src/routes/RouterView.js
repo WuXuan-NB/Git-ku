@@ -2,18 +2,6 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'dva/router';
 
 export default props=>{
-  console.log(props);
-  // let obje={
-  //   arr:[3,"2"],
-  //   size:26,
-  //   lod:false
-  // }
-  // function a(u:{}){
-  //   return {...u}
-  // }
-  // let b=a(props)
-  // console.log(b);
-  
   return <Switch>{
     props.routes.map((item, index)=>{
       return item.path && <Route key={index} path={item.path} render={(props)=>{
