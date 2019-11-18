@@ -1,2 +1,2 @@
 # Git-ku
-马泽法克儿
+Fuck your mrather
