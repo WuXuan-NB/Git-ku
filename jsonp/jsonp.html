@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="jsonp封装.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="input">
+        <div id="show"></div>
+    </div>
+    <script>
+        let oInput=document.getElementById("input")
+        let oShow=document.getElementById("show")
+
+        let  url="https://www.baidu.com/sugrec?prod=pc"
+        oInput.onchange=function(e){
+            jsonp(url,e.target.value,"jQuery1102018495262439704518_1580954678880")
+
+        }
+
+        function jQuery1102018495262439704518_1580954678880(data){
+            let oUl=document.createElement('li')
+            for(let i=0;i<data.g.length;i++){
+                let oLi=document.createElement(li)
+                oLi.innerText=data.g[i].q;
+                oUl.appendChild(oli)
+            }
+            oShow.appendChild(oul)
+        }
+
+    </script>
+</body>
+</html>
